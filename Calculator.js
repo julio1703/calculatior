@@ -2,6 +2,8 @@ const numButtons = Array.from(document.querySelectorAll(".numButton"));
 const opButtons = Array.from(document.querySelectorAll(".opButton"));
 const deletes = document.querySelector("#delete");
 const equales = document.getElementById("equal");
+const backs = document.getElementById("back");
+const forwards = document.getElementById("forward");
 const clears = document.getElementById("clear");
 const results = document.querySelector("#result");
 let equalCheck = 0;
@@ -27,7 +29,8 @@ opButtons.forEach((element) => {
     })
 });
 deletes.addEventListener("click", (event) => {
-    if(equalCheck==1){results.textContent="";}
+    if(equalCheck==1){
+        results.textContent="";}
     else {results.textContent = results.textContent.split("").splice(0, results.textContent.length - 1).join("");}
 })
 function check(array,i,mark) {
@@ -53,3 +56,4 @@ equales.addEventListener("click",(event)=>{
 clears.addEventListener("click",(event)=>{
     results.textContent="";
 })
+
